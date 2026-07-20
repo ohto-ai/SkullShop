@@ -1,0 +1,73 @@
+# ============================================================================
+# HeadShop - English Messages
+# ============================================================================
+
+prefix: "&8[&6HeadShop&8] "
+
+general:
+  no_permission: "&cYou don't have permission."
+  player_only: "&cThis command can only be used by players."
+  reload: "&aConfiguration reloaded."
+  unknown_subcommand: "&eUnknown: {cmd}. Use /hs help."
+  config_loaded: "Configuration loaded."
+  help_header: "&6===== HeadShop v{version} ====="
+  help_buy: "&e/hs buy [player] &7- Open GUI head shop"
+  help_buy_via: "&e/hs buy [player] via <vault|player_points|item> [1|8|64] &7- Direct buy"
+  help_price: "&e/hs price [vault|player_points|item] &7- View prices"
+  help_price_set: "&e/hs price <vault|player_points|item> <amount> &7- Set price (admin)"
+  help_currency: "&e/hs currency <vault|player_points|item> <enable|disable> &7- Toggle currency (admin)"
+  help_allowother: "&e/hs allowother <on|off> &7- Allow/deny buying other players' heads (admin)"
+  help_setitem: "&e/hs setitem &7- Set held item as currency (admin)"
+  help_reload: "&e/hs reload &7- Reload config (admin)"
+
+gui:
+  payment_title: "Select Payment Method"
+  quantity_title: "Buy {player}'s Head"
+  price_lore: "&7Price: {price}"
+  total_price_lore: "&7Total: {total}"
+  balance_lore: "&7Balance: {balance}"
+  click_to_select: "&a▶ Click to select"
+  click_to_buy: "&a▶ Click to buy"
+  insufficient: "&cInsufficient funds"
+  purchase_success: "&aPurchased {player}'s head x{amount}!"
+
+purchase:
+  own_head: "&aYou bought your own head for &6{price} &ausing {economy}."
+  other_head: "&aYou bought &6{player}&a's head for &6{price} &ausing {economy}."
+  insufficient: "&cInsufficient funds! Need &6{price}&c, have &e{balance}&c."
+  choose_economy: "&eChoose a payment method:"
+  economy_option: "&e  /hs buy [player] {key} &7- {name} ({price})"
+  command_hint_self: "&7Example: /hs buy vault"
+  command_hint_player: "&7Example: /hs buy {player} vault"
+  other_players_disabled: "&cBuying other players' heads is disabled."
+  player_not_found: "&cPlayer &6{player}&c not found."
+  inventory_full: "&eInventory full, head dropped."
+  economy_disabled: "&cPayment method '{name}' is disabled."
+  no_economy_available: "&cNo payment methods available."
+
+price:
+  header: "&6===== Head Prices ====="
+  line: "&e  {name}: &6{price}"
+  set_success: "&aSet {name} price to {price}."
+
+currency:
+  enabled: "&aEnabled currency: {name}"
+  disabled: "&eDisabled currency: {name}"
+  usage: "&eUsage: /hs currency <vault|player_points|item> <enable|disable>"
+  cannot_enable: "&cCannot enable {name}: plugin not installed or reference item not set."
+
+setitem:
+  hold_item: "&cPlease hold the item to set as currency."
+  success: "&aSet held item &f{item} &aas currency reference. All NBT recorded (exact match)."
+
+allowother:
+  usage: "&eUsage: /hs allowother <on|off>"
+  on: "&aAllowed"
+  off: "&cDenied"
+  current: "&7Current: {status}"
+  result: "&aToggled: buying other players' heads → {status}"
+
+plugin:
+  config_loaded: "&aConfiguration loaded."
+  enabled: "&aHeadShop v{version} enabled."
+  disabled: "&aHeadShop disabled."

@@ -1,0 +1,35 @@
+# ============================================================================
+# HeadShop Configuration
+# ============================================================================
+
+# Whether players can buy other players' heads (custom player name/skin)
+# When false, players can only buy their own head
+allow_other_players: true
+
+# Language setting: "zh" for Chinese, "en" for English
+language: "zh"
+
+# Economy system configuration — each type can be independently enabled/disabled
+# Players can choose which payment method to use from the enabled ones
+economy:
+
+  # Vault economy (coins/money)
+  vault:
+    enabled: true
+    price: 100.0                         # Price per head
+    display_name: "金币"                  # Display name in messages
+
+  # PlayerPoints economy (coupons/points)
+  player_points:
+    enabled: false
+    price: 150                           # Price per head (whole number)
+    display_name: "点券"
+
+  # Custom NBT item economy
+  # Set the reference item by holding the currency item and running /hs setitem
+  item:
+    enabled: false
+    price: 1                             # How many items needed per head
+    display_name: "货币物品"
+    # reference_item is set automatically by /hs setitem command
+    reference_item: {}
