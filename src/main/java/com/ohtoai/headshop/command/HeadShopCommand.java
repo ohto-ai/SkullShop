@@ -338,6 +338,8 @@ public class HeadShopCommand implements CommandExecutor {
         sender.sendMessage(messages.getNoPrefix("general.help_allowother"));
         sender.sendMessage(messages.getNoPrefix("general.help_setitem"));
         sender.sendMessage(messages.getNoPrefix("general.help_reload"));
+        sender.sendMessage("");
+        sender.sendMessage(messages.getNoPrefix("general.help_author"));
 
         // Show current economy status
         Map<String, EconomyProvider> providers = plugin.getAvailableProviders();

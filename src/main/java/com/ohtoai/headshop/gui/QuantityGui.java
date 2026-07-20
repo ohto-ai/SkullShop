@@ -75,20 +75,19 @@ public class QuantityGui {
         EconomyProvider provider = plugin.getEconomyProvider(economyKey);
         double price = plugin.getConfigManager().getPrice(economyKey);
 
-        Material icon = switch (economyKey) {
-            case "vault" -> Material.GOLD_INGOT;
-            case "player_points" -> Material.EMERALD;
+        ItemStack currencyItem = switch (economyKey) {
+            case "vault" -> new ItemStack(Material.GOLD_INGOT);
+            case "player_points" -> new ItemStack(Material.EMERALD);
             case "item" -> {
                 if (provider instanceof ItemEconomyProvider ie) {
                     ItemStack ref = ie.getReferenceItem();
-                    if (ref != null) yield ref.getType();
+                    if (ref != null) yield ref.clone();
                 }
-                yield Material.DIAMOND;
+                yield new ItemStack(Material.DIAMOND);
             }
-            default -> Material.PAPER;
+            default -> new ItemStack(Material.PAPER);
         };
 
-        ItemStack currencyItem = new ItemStack(icon);
         ItemMeta cm = currencyItem.getItemMeta();
         cm.setDisplayName("§e" + provider.getDisplayName() + " §7- " + formatPrice(price));
         currencyItem.setItemMeta(cm);

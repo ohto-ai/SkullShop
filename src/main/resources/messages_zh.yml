@@ -19,6 +19,7 @@ general:
   help_allowother: "&e/hs allowother <on|off> &7- 允许/禁止购买其他玩家头颅 (管理员)"
   help_setitem: "&e/hs setitem &7- 将手持物品设为货币参考物品 (管理员)"
   help_reload: "&e/hs reload &7- 重载配置 (管理员)"
+  help_author: "&7作者: OhtoAi"
 
 gui:
   payment_title: "选择支付方式"

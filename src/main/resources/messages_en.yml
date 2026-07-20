@@ -19,6 +19,7 @@ general:
   help_allowother: "&e/hs allowother <on|off> &7- Allow/deny buying other players' heads (admin)"
   help_setitem: "&e/hs setitem &7- Set held item as currency (admin)"
   help_reload: "&e/hs reload &7- Reload config (admin)"
+  help_author: "&7Author: OhtoAi"
 
 gui:
   payment_title: "Select Payment Method"

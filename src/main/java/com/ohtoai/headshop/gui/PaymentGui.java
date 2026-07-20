@@ -70,8 +70,7 @@ public class PaymentGui {
             double price = plugin.getConfigManager().getPrice(key);
             String priceStr = formatPrice(key, price);
 
-            Material icon = getIcon(key);
-            ItemStack item = new ItemStack(icon);
+            ItemStack item = getIconItem(key);
             ItemMeta meta = item.getItemMeta();
             meta.setDisplayName("§r" + provider.getDisplayName());
 
@@ -122,19 +121,19 @@ public class PaymentGui {
         inventory.setItem(PREVIEW_SLOT, preview);
     }
 
-    private Material getIcon(String key) {
+    private ItemStack getIconItem(String key) {
         return switch (key) {
-            case "vault" -> Material.GOLD_INGOT;
-            case "player_points" -> Material.EMERALD;
+            case "vault" -> new ItemStack(Material.GOLD_INGOT);
+            case "player_points" -> new ItemStack(Material.EMERALD);
             case "item" -> {
                 EconomyProvider p = plugin.getEconomyProvider("item");
                 if (p instanceof ItemEconomyProvider item) {
                     ItemStack ref = item.getReferenceItem();
-                    if (ref != null) yield ref.getType();
+                    if (ref != null) yield ref.clone();
                 }
-                yield Material.DIAMOND;
+                yield new ItemStack(Material.DIAMOND);
             }
-            default -> Material.PAPER;
+            default -> new ItemStack(Material.PAPER);
         };
     }
 
