@@ -9,6 +9,9 @@ general:
   player_only: "&cThis command can only be used by players."
   reload: "&aConfiguration reloaded."
   unknown_subcommand: "&eUnknown: {cmd}. Use /ss help."
+  unknown_currency: "&cUnknown currency: {key}. Available: vault, player_points, item."
+  invalid_number: "&cPlease enter a valid number."
+  negative_price: "&cPrice cannot be negative."
   config_loaded: "Configuration loaded."
   help_header: "&6===== SkullShop v{version} ====="
   help_buy: "&e/ss buy [player] &7- Open GUI head shop"
@@ -20,6 +23,7 @@ general:
   help_setitem: "&e/ss setitem &7- Set held item as currency (admin)"
   help_reload: "&e/ss reload &7- Reload config (admin)"
   help_author: "&7Author: OhtoAi"
+  help_available: "&7Available currencies:"
 
 gui:
   payment_title: "Select Payment Method"
@@ -31,6 +35,9 @@ gui:
   click_to_buy: "&a▶ Click to buy"
   insufficient: "&cInsufficient funds"
   purchase_success: "&aPurchased {player}'s head x{amount}!"
+  back: "&c◀ Back"
+  loading: "&7Loading..."
+  still_loading: "&cHead data still loading, please try again."
 
 purchase:
   own_head: "&aYou bought your own head for &6{price} &ausing {economy}."
@@ -50,12 +57,13 @@ price:
   header: "&6===== Head Prices ====="
   line: "&e  {name}: &6{price}"
   set_success: "&aSet {name} price to {price}."
+  no_available: "&7No currencies available."
 
 currency:
   enabled: "&aEnabled currency: {name}"
   disabled: "&eDisabled currency: {name}"
   usage: "&eUsage: /ss currency <vault|player_points|item> <enable|disable>"
-  cannot_enable: "&cCannot enable {name}: plugin not installed or reference item not set."
+  cannot_enable: "&cCannot enable {name}: {reason}."
 
 setitem:
   hold_item: "&cPlease hold the item to set as currency."

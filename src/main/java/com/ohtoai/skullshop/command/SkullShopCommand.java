@@ -48,7 +48,7 @@ public class SkullShopCommand implements CommandExecutor {
         };
     }
 
-    // ==================== /hs buy ====================
+    // ==================== /ss buy ====================
 
     private boolean handleBuy(CommandSender sender, String[] args) {
         Messages messages = plugin.getMessages();
@@ -58,12 +58,12 @@ public class SkullShopCommand implements CommandExecutor {
             return true;
         }
 
-        if (!sender.hasPermission("headshop.use")) {
+        if (!sender.hasPermission("skullshop.use")) {
             sender.sendMessage(messages.get("general.no_permission"));
             return true;
         }
 
-        // Parse: /hs buy [id] [via <currency>] [1|8|64]
+        // Parse: /ss buy [id] [via <currency>] [1|8|64]
         String targetName = null;
         String economyKey = null;
         int quantity = 1;
@@ -79,7 +79,7 @@ public class SkullShopCommand implements CommandExecutor {
             } else if (arg.equals("1") || arg.equals("8") || arg.equals("64")) {
                 quantity = Integer.parseInt(arg);
             } else if (plugin.getEconomyProvider(arg) != null && economyKey == null) {
-                // This is an economy key (for backward compat: /hs buy vault)
+                // This is an economy key (for backward compat: /ss buy vault)
                 economyKey = arg;
             } else {
                 // Treat as player name
@@ -113,17 +113,17 @@ public class SkullShopCommand implements CommandExecutor {
         return true;
     }
 
-    // ==================== /hs price ====================
+    // ==================== /ss price ====================
 
     private boolean handlePrice(CommandSender sender, String[] args) {
         Messages messages = plugin.getMessages();
 
         if (args.length == 1) {
-            // /hs price — show all
+            // /ss price — show all
             sender.sendMessage(messages.getNoPrefix("price.header"));
             Map<String, EconomyProvider> providers = plugin.getAvailableProviders();
             if (providers.isEmpty()) {
-                sender.sendMessage("  §7无可用货币。");
+                sender.sendMessage(messages.getNoPrefix("price.no_available"));
             }
             for (Map.Entry<String, EconomyProvider> entry : providers.entrySet()) {
                 double price = plugin.getConfigManager().getPrice(entry.getKey());
@@ -136,20 +136,20 @@ public class SkullShopCommand implements CommandExecutor {
 
         String key = args[1].toLowerCase();
         if (!isValidEconomyKey(key)) {
-            sender.sendMessage("§c未知货币: " + key + "。可用: vault, player_points, item");
+            sender.sendMessage(messages.get("general.unknown_currency", "{key}", key));
             return true;
         }
 
         if (args.length >= 3) {
-            // /hs price <type> <number> — set (admin)
-            if (!sender.hasPermission("headshop.admin")) {
+            // /ss price <type> <number> — set (admin)
+            if (!sender.hasPermission("skullshop.admin")) {
                 sender.sendMessage(messages.get("general.no_permission"));
                 return true;
             }
             try {
                 double newPrice = Double.parseDouble(args[2]);
                 if (newPrice < 0) {
-                    sender.sendMessage("§c价格不能为负数。");
+                    sender.sendMessage(messages.get("general.negative_price"));
                     return true;
                 }
                 plugin.getConfigManager().setPrice(key, newPrice);
@@ -160,10 +160,10 @@ public class SkullShopCommand implements CommandExecutor {
                         "{name}", displayName,
                         "{price}", formatPriceSimple(key, newPrice)));
             } catch (NumberFormatException e) {
-                sender.sendMessage("§c请输入有效的数字。");
+                sender.sendMessage(messages.get("general.invalid_number"));
             }
         } else {
-            // /hs price <type> — show specific
+            // /ss price <type> — show specific
             boolean enabled = plugin.getConfigManager().isEconomyEnabled(key);
             double price = plugin.getConfigManager().getPrice(key);
             String displayName = plugin.getConfigManager().getConfig()
@@ -177,12 +177,12 @@ public class SkullShopCommand implements CommandExecutor {
         return true;
     }
 
-    // ==================== /hs currency ====================
+    // ==================== /ss currency ====================
 
     private boolean handleCurrency(CommandSender sender, String[] args) {
         Messages messages = plugin.getMessages();
 
-        if (!sender.hasPermission("headshop.admin")) {
+        if (!sender.hasPermission("skullshop.admin")) {
             sender.sendMessage(messages.get("general.no_permission"));
             return true;
         }
@@ -194,7 +194,7 @@ public class SkullShopCommand implements CommandExecutor {
 
         String key = args[1].toLowerCase();
         if (!isValidEconomyKey(key)) {
-            sender.sendMessage("§c未知货币: " + key + "。可用: vault, player_points, item");
+            sender.sendMessage(messages.get("general.unknown_currency", "{key}", key));
             return true;
         }
 
@@ -215,7 +215,8 @@ public class SkullShopCommand implements CommandExecutor {
             if (provider == null || !provider.isAvailable()) {
                 String reason = (provider != null) ? provider.getUnavailableReason() : "未知";
                 String name = plugin.getConfigManager().getConfig().getString("economy." + key + ".display_name", key);
-                sender.sendMessage("§c无法启用" + name + "：" + reason);
+                sender.sendMessage(messages.get("currency.cannot_enable",
+                        "{name}", name, "{reason}", reason));
                 return true;
             }
         }
@@ -233,12 +234,12 @@ public class SkullShopCommand implements CommandExecutor {
         return true;
     }
 
-    // ==================== /hs allowother ====================
+    // ==================== /ss allowother ====================
 
     private boolean handleAllowOther(CommandSender sender, String[] args) {
         Messages messages = plugin.getMessages();
 
-        if (!sender.hasPermission("headshop.admin")) {
+        if (!sender.hasPermission("skullshop.admin")) {
             sender.sendMessage(messages.get("general.no_permission"));
             return true;
         }
@@ -271,12 +272,12 @@ public class SkullShopCommand implements CommandExecutor {
         return true;
     }
 
-    // ==================== /hs setitem ====================
+    // ==================== /ss setitem ====================
 
     private boolean handleSetItem(CommandSender sender) {
         Messages messages = plugin.getMessages();
 
-        if (!sender.hasPermission("headshop.admin")) {
+        if (!sender.hasPermission("skullshop.admin")) {
             sender.sendMessage(messages.get("general.no_permission"));
             return true;
         }
@@ -307,12 +308,12 @@ public class SkullShopCommand implements CommandExecutor {
         return true;
     }
 
-    // ==================== /hs reload ====================
+    // ==================== /ss reload ====================
 
     private boolean handleReload(CommandSender sender) {
         Messages messages = plugin.getMessages();
 
-        if (!sender.hasPermission("headshop.admin")) {
+        if (!sender.hasPermission("skullshop.admin")) {
             sender.sendMessage(messages.get("general.no_permission"));
             return true;
         }
@@ -345,7 +346,7 @@ public class SkullShopCommand implements CommandExecutor {
         Map<String, EconomyProvider> providers = plugin.getAvailableProviders();
         if (!providers.isEmpty()) {
             sender.sendMessage("");
-            sender.sendMessage("§7当前可用货币:");
+            sender.sendMessage(messages.getNoPrefix("general.help_available"));
             for (Map.Entry<String, EconomyProvider> entry : providers.entrySet()) {
                 double price = plugin.getConfigManager().getPrice(entry.getKey());
                 sender.sendMessage("  §e" + entry.getValue().getDisplayName()

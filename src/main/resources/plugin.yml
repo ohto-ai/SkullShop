@@ -19,4 +19,4 @@ commands:
   skullshop:
     description: "SkullShop main command"
     usage: "/ss <buy|price|currency|allowother|setitem|reload|help>"
-    aliases: [ss]
+    aliases: [ss, hs]

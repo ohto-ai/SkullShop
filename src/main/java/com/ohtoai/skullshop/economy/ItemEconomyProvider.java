@@ -62,7 +62,7 @@ public class ItemEconomyProvider implements EconomyProvider {
 
     @Override
     public String getUnavailableReason() {
-        return "未设置参考物品 (请使用 /hs setitem)";
+        return "未设置参考物品 (请使用 /ss setitem)";
     }
 
     /**

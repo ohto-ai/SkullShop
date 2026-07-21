@@ -9,6 +9,9 @@ general:
   player_only: "&c此命令仅玩家可用。"
   reload: "&a配置已重载。"
   unknown_subcommand: "&e未知子命令: {cmd}。使用 /ss help 查看帮助。"
+  unknown_currency: "&c未知货币: {key}。可用: vault, player_points, item。"
+  invalid_number: "&c请输入有效的数字。"
+  negative_price: "&c价格不能为负数。"
   config_loaded: "配置已加载。"
   help_header: "&6===== SkullShop v{version} ====="
   help_buy: "&e/ss buy [玩家名] &7- 打开GUI商店购买头颅"
@@ -20,6 +23,7 @@ general:
   help_setitem: "&e/ss setitem &7- 将手持物品设为货币参考物品 (管理员)"
   help_reload: "&e/ss reload &7- 重载配置 (管理员)"
   help_author: "&7作者: OhtoAi"
+  help_available: "&7当前可用货币:"
 
 gui:
   payment_title: "选择支付方式"
@@ -31,6 +35,9 @@ gui:
   click_to_buy: "&a▶ 点击购买"
   insufficient: "&c余额不足"
   purchase_success: "&a购买成功! 获得 {player} 的头颅 x{amount}"
+  back: "&c◀ 返回"
+  loading: "&7加载中..."
+  still_loading: "&c头像数据还在加载中，请稍后再试。"
 
 purchase:
   own_head: "&a你使用 {economy} 花费 &6{price} &a购买了你的头颅。"
@@ -50,12 +57,13 @@ price:
   header: "&6===== 头颅价格 ====="
   line: "&e  {name}: &6{price}"
   set_success: "&a已将 {name} 价格设置为 {price}。"
+  no_available: "&7无可用货币。"
 
 currency:
   enabled: "&a已启用货币: {name}"
   disabled: "&e已禁用货币: {name}"
   usage: "&e用法: /ss currency <vault|player_points|item> <enable|disable>"
-  cannot_enable: "&c无法启用 {name}：对应插件未安装或物品货币未设置。"
+  cannot_enable: "&c无法启用 {name}：{reason}。"
 
 setitem:
   hold_item: "&c请手持要设为货币的物品。"

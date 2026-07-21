@@ -35,7 +35,7 @@ public class SkullShopTabCompleter implements TabCompleter {
                     result.add(sub);
                 }
             }
-            if (!sender.hasPermission("headshop.admin")) {
+            if (!sender.hasPermission("skullshop.admin")) {
                 result.remove("reload");
                 result.remove("setitem");
                 result.remove("currency");
@@ -56,7 +56,7 @@ public class SkullShopTabCompleter implements TabCompleter {
     }
 
     private List<String> completeBuy(CommandSender sender, String[] args) {
-        // /hs buy [id] [via <currency>] [1|8|64]
+        // /ss buy [id] [via <currency>] [1|8|64]
         String partial = args[args.length - 1].toLowerCase();
 
         // Find the "via" keyword position

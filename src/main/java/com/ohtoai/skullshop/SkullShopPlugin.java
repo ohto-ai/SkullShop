@@ -114,8 +114,8 @@ public final class SkullShopPlugin extends JavaPlugin implements Listener {
         economyProviders.clear();
 
         // Always register all three providers — config "enabled" only controls UI visibility.
-        // This allows /hs currency <type> enable to work even when the provider is currently
-        // disabled but available (e.g., right after /hs setitem).
+        // This allows /ss currency <type> enable to work even when the provider is currently
+        // disabled but available (e.g., right after /ss setitem).
 
         VaultEconomyProvider vault = new VaultEconomyProvider(configManager.getVaultDisplayName());
         economyProviders.put("vault", vault);

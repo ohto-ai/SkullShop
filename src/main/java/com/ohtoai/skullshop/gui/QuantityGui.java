@@ -71,6 +71,8 @@ public class QuantityGui {
      * Build static elements: currency indicator, back button.
      */
     private void buildStatic() {
+        Messages messages = plugin.getMessages();
+
         // Currency indicator at top
         EconomyProvider provider = plugin.getEconomyProvider(economyKey);
         double price = plugin.getConfigManager().getPrice(economyKey);
@@ -96,7 +98,7 @@ public class QuantityGui {
         // Back button
         ItemStack backBtn = new ItemStack(Material.ARROW);
         ItemMeta bm = backBtn.getItemMeta();
-        bm.setDisplayName("§c◀ 返回");
+        bm.setDisplayName(messages.getNoPrefix("gui.back"));
         backBtn.setItemMeta(bm);
         inventory.setItem(BACK_SLOT, backBtn);
     }
@@ -147,7 +149,7 @@ public class QuantityGui {
                 lore.add(messages.getNoPrefix("gui.total_price_lore",
                         "{total}", formatPrice(totalPrice)));
                 lore.add("");
-                lore.add("§7加载中...");
+                lore.add(messages.getNoPrefix("gui.loading"));
                 meta.setLore(lore);
                 button.setItemMeta(meta);
             }
@@ -216,7 +218,7 @@ public class QuantityGui {
         }
 
         if (resolvedProfile == null) {
-            player.sendMessage("§c头像数据还在加载中，请稍后再试。");
+            player.sendMessage(plugin.getMessages().get("gui.still_loading"));
             return;
         }
 
