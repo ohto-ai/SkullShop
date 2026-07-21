@@ -1,4 +1,4 @@
-package com.ohtoai.headshop.economy;
+package com.ohtoai.skullshop.economy;
 
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;

@@ -1,6 +1,6 @@
-package com.ohtoai.headshop.config;
+package com.ohtoai.skullshop.config;
 
-import com.ohtoai.headshop.HeadShopPlugin;
+import com.ohtoai.skullshop.SkullShopPlugin;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -10,11 +10,11 @@ import java.nio.charset.StandardCharsets;
 
 public class Messages {
 
-    private final HeadShopPlugin plugin;
+    private final SkullShopPlugin plugin;
     private YamlConfiguration messagesConfig;
     private String prefix;
 
-    public Messages(HeadShopPlugin plugin) {
+    public Messages(SkullShopPlugin plugin) {
         this.plugin = plugin;
         load();
     }

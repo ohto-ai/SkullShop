@@ -1,6 +1,6 @@
-package com.ohtoai.headshop.command;
+package com.ohtoai.skullshop.command;
 
-import com.ohtoai.headshop.HeadShopPlugin;
+import com.ohtoai.skullshop.SkullShopPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -12,16 +12,16 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class HeadShopTabCompleter implements TabCompleter {
+public class SkullShopTabCompleter implements TabCompleter {
 
-    private final HeadShopPlugin plugin;
+    private final SkullShopPlugin plugin;
 
     private static final List<String> SUB_COMMANDS = Arrays.asList("buy", "price", "currency", "allowother", "setitem", "reload", "help");
     private static final List<String> ECONOMY_KEYS = Arrays.asList("vault", "player_points", "item");
     private static final List<String> ENABLE_DISABLE = Arrays.asList("enable", "disable");
     private static final List<String> QUANTITIES = Arrays.asList("1", "8", "64");
 
-    public HeadShopTabCompleter(HeadShopPlugin plugin) {
+    public SkullShopTabCompleter(SkullShopPlugin plugin) {
         this.plugin = plugin;
     }
 

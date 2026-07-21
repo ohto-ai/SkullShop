@@ -1,6 +1,6 @@
-package com.ohtoai.headshop.economy;
+package com.ohtoai.skullshop.economy;
 
-import com.ohtoai.headshop.HeadShopPlugin;
+import com.ohtoai.skullshop.SkullShopPlugin;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -14,11 +14,11 @@ import java.util.Map;
  */
 public class ItemEconomyProvider implements EconomyProvider {
 
-    private final HeadShopPlugin plugin;
+    private final SkullShopPlugin plugin;
     private final String displayName;
     private ItemStack referenceItem;
 
-    public ItemEconomyProvider(HeadShopPlugin plugin, String displayName) {
+    public ItemEconomyProvider(SkullShopPlugin plugin, String displayName) {
         this.plugin = plugin;
         this.displayName = displayName;
         loadReferenceItem();

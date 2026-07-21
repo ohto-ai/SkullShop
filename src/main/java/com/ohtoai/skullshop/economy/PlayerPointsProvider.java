@@ -1,4 +1,4 @@
-package com.ohtoai.headshop.economy;
+package com.ohtoai.skullshop.economy;
 
 import org.black_ixx.playerpoints.PlayerPoints;
 import org.black_ixx.playerpoints.PlayerPointsAPI;

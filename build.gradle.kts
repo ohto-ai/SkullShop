@@ -6,7 +6,7 @@ plugins {
 
 group = "com.ohtoai"
 version = project.findProperty("plugin_version")?.toString() ?: "1.0.0"
-description = "HeadShop - Buy player heads with multiple economy options"
+description = "SkullShop - Buy player heads with multiple economy options"
 
 java {
     toolchain.languageVersion = JavaLanguageVersion.of(21)

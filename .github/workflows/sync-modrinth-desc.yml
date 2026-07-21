@@ -27,13 +27,13 @@ jobs:
               out.write(data)
           "
 
-          echo "Sending README to Modrinth project zb39UOk7..."
+          echo "Sending README to Modrinth project LCum2Ldx..."
 
           HTTP_CODE=$(curl -s -o /tmp/response.txt -w "%{http_code}" \
-            -X PATCH "https://api.modrinth.com/v2/project/zb39UOk7" \
+            -X PATCH "https://api.modrinth.com/v2/project/LCum2Ldx" \
             -H "Authorization: $MODRINTH_TOKEN" \
             -H "Content-Type: application/json" \
-            -H "User-Agent: OhtoAi/illegal-scanner (GitHub Actions)" \
+            -H "User-Agent: OhtoAi/SkullShop (GitHub Actions)" \
             -d @/tmp/body.json)
 
           echo "HTTP Status: $HTTP_CODE"
@@ -44,7 +44,7 @@ jobs:
             echo "✗ Authentication failed. Check that MODRINTH_TOKEN is set and has 'Write Projects' scope."
             exit 1
           elif [ "$HTTP_CODE" = "404" ]; then
-            echo "✗ Project not found. Verify the project ID zb39UOk7 is correct."
+            echo "✗ Project not found. Verify the project ID LCum2Ldx is correct."
             exit 1
           else
             echo "✗ Unexpected response (HTTP $HTTP_CODE):"

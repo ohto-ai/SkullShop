@@ -1,4 +1,4 @@
-package com.ohtoai.headshop.economy;
+package com.ohtoai.skullshop.economy;
 
 import org.bukkit.entity.Player;
 

@@ -1,13 +1,13 @@
-package com.ohtoai.headshop.gui;
+package com.ohtoai.skullshop.gui;
 
 import com.destroystokyo.paper.profile.PlayerProfile;
-import com.ohtoai.headshop.HeadShopPlugin;
-import com.ohtoai.headshop.config.Messages;
-import com.ohtoai.headshop.economy.EconomyProvider;
-import com.ohtoai.headshop.economy.ItemEconomyProvider;
-import com.ohtoai.headshop.economy.PlayerPointsProvider;
-import com.ohtoai.headshop.economy.VaultEconomyProvider;
-import com.ohtoai.headshop.head.HeadFactory;
+import com.ohtoai.skullshop.SkullShopPlugin;
+import com.ohtoai.skullshop.config.Messages;
+import com.ohtoai.skullshop.economy.EconomyProvider;
+import com.ohtoai.skullshop.economy.ItemEconomyProvider;
+import com.ohtoai.skullshop.economy.PlayerPointsProvider;
+import com.ohtoai.skullshop.economy.VaultEconomyProvider;
+import com.ohtoai.skullshop.head.HeadFactory;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -35,7 +35,7 @@ public class QuantityGui {
     private static final int[] QUANTITIES = {1, 8, 64};
     private static final int BACK_SLOT = 22;
 
-    private final HeadShopPlugin plugin;
+    private final SkullShopPlugin plugin;
     private final Player player;
     private final String targetName;
     private final String economyKey;
@@ -44,7 +44,7 @@ public class QuantityGui {
     private final Inventory inventory;
     private PlayerProfile resolvedProfile;
 
-    public QuantityGui(HeadShopPlugin plugin, Player player, String targetName,
+    public QuantityGui(SkullShopPlugin plugin, Player player, String targetName,
                        String economyKey, HeadFactory headFactory, PaymentGui parent) {
         this.plugin = plugin;
         this.player = player;

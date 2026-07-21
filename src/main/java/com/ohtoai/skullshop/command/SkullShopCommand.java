@@ -1,10 +1,10 @@
-package com.ohtoai.headshop.command;
+package com.ohtoai.skullshop.command;
 
-import com.ohtoai.headshop.HeadShopPlugin;
-import com.ohtoai.headshop.config.Messages;
-import com.ohtoai.headshop.economy.EconomyProvider;
-import com.ohtoai.headshop.economy.ItemEconomyProvider;
-import com.ohtoai.headshop.gui.PaymentGui;
+import com.ohtoai.skullshop.SkullShopPlugin;
+import com.ohtoai.skullshop.config.Messages;
+import com.ohtoai.skullshop.economy.EconomyProvider;
+import com.ohtoai.skullshop.economy.ItemEconomyProvider;
+import com.ohtoai.skullshop.gui.PaymentGui;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,11 +13,11 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.Map;
 
-public class HeadShopCommand implements CommandExecutor {
+public class SkullShopCommand implements CommandExecutor {
 
-    private final HeadShopPlugin plugin;
+    private final SkullShopPlugin plugin;
 
-    public HeadShopCommand(HeadShopPlugin plugin) {
+    public SkullShopCommand(SkullShopPlugin plugin) {
         this.plugin = plugin;
     }
 

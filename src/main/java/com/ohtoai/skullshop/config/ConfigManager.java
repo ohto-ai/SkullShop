@@ -1,6 +1,6 @@
-package com.ohtoai.headshop.config;
+package com.ohtoai.skullshop.config;
 
-import com.ohtoai.headshop.HeadShopPlugin;
+import com.ohtoai.skullshop.SkullShopPlugin;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -15,11 +15,11 @@ import java.util.logging.Level;
 
 public class ConfigManager {
 
-    private final HeadShopPlugin plugin;
+    private final SkullShopPlugin plugin;
     private File configFile;
     private FileConfiguration config;
 
-    public ConfigManager(HeadShopPlugin plugin) {
+    public ConfigManager(SkullShopPlugin plugin) {
         this.plugin = plugin;
     }
 

@@ -1,13 +1,13 @@
-package com.ohtoai.headshop;
+package com.ohtoai.skullshop;
 
-import com.ohtoai.headshop.command.HeadShopCommand;
-import com.ohtoai.headshop.command.HeadShopTabCompleter;
-import com.ohtoai.headshop.config.ConfigManager;
-import com.ohtoai.headshop.config.Messages;
-import com.ohtoai.headshop.economy.*;
-import com.ohtoai.headshop.gui.PaymentGui;
-import com.ohtoai.headshop.gui.QuantityGui;
-import com.ohtoai.headshop.head.HeadPurchaseHandler;
+import com.ohtoai.skullshop.command.SkullShopCommand;
+import com.ohtoai.skullshop.command.SkullShopTabCompleter;
+import com.ohtoai.skullshop.config.ConfigManager;
+import com.ohtoai.skullshop.config.Messages;
+import com.ohtoai.skullshop.economy.*;
+import com.ohtoai.skullshop.gui.PaymentGui;
+import com.ohtoai.skullshop.gui.QuantityGui;
+import com.ohtoai.skullshop.head.HeadPurchaseHandler;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -23,9 +23,9 @@ import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 
-public final class HeadShopPlugin extends JavaPlugin implements Listener {
+public final class SkullShopPlugin extends JavaPlugin implements Listener {
 
-    private static HeadShopPlugin instance;
+    private static SkullShopPlugin instance;
 
     private ConfigManager configManager;
     private Messages messages;
@@ -35,7 +35,7 @@ public final class HeadShopPlugin extends JavaPlugin implements Listener {
     // Track active GUIs by inventory (avoids race conditions when switching GUIs)
     private final Map<Inventory, Object> activeGuis = new ConcurrentHashMap<>();
 
-    public static HeadShopPlugin getInstance() {
+    public static SkullShopPlugin getInstance() {
         return instance;
     }
 
@@ -63,9 +63,9 @@ public final class HeadShopPlugin extends JavaPlugin implements Listener {
 
         // 4. Register commands
         Objects.requireNonNull(getCommand("headshop")).setExecutor(
-                new HeadShopCommand(this));
+                new SkullShopCommand(this));
         Objects.requireNonNull(getCommand("headshop")).setTabCompleter(
-                new HeadShopTabCompleter(this));
+                new SkullShopTabCompleter(this));
 
         // 5. Register GUI listeners
         getServer().getPluginManager().registerEvents(this, this);

@@ -1,11 +1,11 @@
-package com.ohtoai.headshop.gui;
+package com.ohtoai.skullshop.gui;
 
 import com.destroystokyo.paper.profile.PlayerProfile;
-import com.ohtoai.headshop.HeadShopPlugin;
-import com.ohtoai.headshop.config.Messages;
-import com.ohtoai.headshop.economy.EconomyProvider;
-import com.ohtoai.headshop.economy.ItemEconomyProvider;
-import com.ohtoai.headshop.head.HeadFactory;
+import com.ohtoai.skullshop.SkullShopPlugin;
+import com.ohtoai.skullshop.config.Messages;
+import com.ohtoai.skullshop.economy.EconomyProvider;
+import com.ohtoai.skullshop.economy.ItemEconomyProvider;
+import com.ohtoai.skullshop.head.HeadFactory;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -31,10 +31,10 @@ public class PaymentGui {
     private final Player player;
     private final String targetName;
     private final Inventory inventory;
-    private final HeadShopPlugin plugin;
+    private final SkullShopPlugin plugin;
     private final HeadFactory headFactory;
 
-    public PaymentGui(HeadShopPlugin plugin, Player player, String targetName) {
+    public PaymentGui(SkullShopPlugin plugin, Player player, String targetName) {
         this.plugin = plugin;
         this.player = player;
         this.targetName = targetName;

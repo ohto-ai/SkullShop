@@ -1,8 +1,8 @@
-package com.ohtoai.headshop.head;
+package com.ohtoai.skullshop.head;
 
-import com.ohtoai.headshop.HeadShopPlugin;
-import com.ohtoai.headshop.config.Messages;
-import com.ohtoai.headshop.economy.EconomyProvider;
+import com.ohtoai.skullshop.SkullShopPlugin;
+import com.ohtoai.skullshop.config.Messages;
+import com.ohtoai.skullshop.economy.EconomyProvider;
 import org.bukkit.Sound;
 import org.bukkit.SoundCategory;
 import org.bukkit.entity.Player;
@@ -12,15 +12,15 @@ import java.util.Map;
 
 /**
  * Coordinates direct (non-GUI) head purchases.
- * For GUI purchases, see {@link com.ohtoai.headshop.gui.QuantityGui}.
+ * For GUI purchases, see {@link com.ohtoai.skullshop.gui.QuantityGui}.
  */
 public class HeadPurchaseHandler {
 
-    private final HeadShopPlugin plugin;
+    private final SkullShopPlugin plugin;
     private final Map<String, EconomyProvider> economyProviders;
     private final HeadFactory headFactory;
 
-    public HeadPurchaseHandler(HeadShopPlugin plugin, Map<String, EconomyProvider> economyProviders) {
+    public HeadPurchaseHandler(SkullShopPlugin plugin, Map<String, EconomyProvider> economyProviders) {
         this.plugin = plugin;
         this.economyProviders = economyProviders;
         this.headFactory = new HeadFactory(plugin);

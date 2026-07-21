@@ -1,22 +1,22 @@
 name: ${name}
 version: ${version}
-main: com.ohtoai.headshop.HeadShopPlugin
+main: com.ohtoai.skullshop.SkullShopPlugin
 api-version: "1.20"
 description: ${description}
 author: OhtoAi
-prefix: HeadShop
+prefix: SkullShop
 softdepend: [Vault, PlayerPoints]
 
 permissions:
-  headshop.use:
-    description: "Allow using /headshop buy command"
+  skullshop.use:
+    description: "Allow using /skullshop buy command"
     default: true
-  headshop.admin:
-    description: "Allow /headshop admin commands (reload, price set, currency toggle, setitem, allowother)"
+  skullshop.admin:
+    description: "Allow /skullshop admin commands (reload, price set, currency toggle, setitem, allowother)"
     default: op
 
 commands:
-  headshop:
-    description: "HeadShop main command"
-    usage: "/hs <buy|price|currency|allowother|setitem|reload|help>"
-    aliases: [hs]
+  skullshop:
+    description: "SkullShop main command"
+    usage: "/ss <buy|price|currency|allowother|setitem|reload|help>"
+    aliases: [ss]

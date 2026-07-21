@@ -75,10 +75,10 @@ jobs:
               repo: context.repo.repo
             })).data;
             for (const release of releases) {
-              // Extract version from release name "illegal-scanner vX.Y.Z" for exact comparison.
+              // Extract version from release name "SkullShop vX.Y.Z" for exact comparison.
               // Using includes() would false-match: "1.2.9-beta" contains "1.2.9".
               if (release.name) {
-                const versionFromName = release.name.replace(/^illegal-scanner v/, '');
+                const versionFromName = release.name.replace(/^SkullShop v/, '');
                 if (versionFromName === READ_VERSION) {
                   core.setFailed('Version ' + READ_VERSION + ' has already been released! Bump plugin_version in gradle.properties to publish a new version, or use workflow_dispatch to retry.')
                 }
@@ -150,7 +150,7 @@ jobs:
 
           files: ${{ steps.findjar.outputs.jarpath }}
 
-          name: illegal-scanner v${{ needs.Get-Properties.outputs.plugin-version }}
+          name: SkullShop v${{ needs.Get-Properties.outputs.plugin-version }}
           version: ${{ needs.Get-Properties.outputs.plugin-version }}
           version-type: ${{ needs.Get-Properties.outputs.release-type }}
 
@@ -160,8 +160,8 @@ jobs:
           game-versions: ">=1.20.5 <=1.20.6"
           java: Java 21
 
-          modrinth-id: zb39UOk7
-          curseforge-id: 1594659
+          modrinth-id: LCum2Ldx
+          curseforge-id: 1619316
 
       - name: Sync README to Modrinth project description
         env:
@@ -177,13 +177,13 @@ jobs:
               out.write(data)
           "
 
-          echo "Sending README to Modrinth project zb39UOk7..."
+          echo "Sending README to Modrinth project LCum2Ldx..."
 
           HTTP_CODE=$(curl -s -o /tmp/response.txt -w "%{http_code}" \
-            -X PATCH "https://api.modrinth.com/v2/project/zb39UOk7" \
+            -X PATCH "https://api.modrinth.com/v2/project/LCum2Ldx" \
             -H "Authorization: $MODRINTH_TOKEN" \
             -H "Content-Type: application/json" \
-            -H "User-Agent: OhtoAi/illegal-scanner (GitHub Actions)" \
+            -H "User-Agent: OhtoAi/SkullShop (GitHub Actions)" \
             -d @/tmp/body.json)
 
           echo "HTTP Status: $HTTP_CODE"

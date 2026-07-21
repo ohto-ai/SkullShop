@@ -1,7 +1,7 @@
-package com.ohtoai.headshop.head;
+package com.ohtoai.skullshop.head;
 
 import com.destroystokyo.paper.profile.PlayerProfile;
-import com.ohtoai.headshop.HeadShopPlugin;
+import com.ohtoai.skullshop.SkullShopPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
@@ -18,9 +18,9 @@ import java.util.concurrent.CompletableFuture;
  */
 public class HeadFactory {
 
-    private final HeadShopPlugin plugin;
+    private final SkullShopPlugin plugin;
 
-    public HeadFactory(HeadShopPlugin plugin) {
+    public HeadFactory(SkullShopPlugin plugin) {
         this.plugin = plugin;
     }
 

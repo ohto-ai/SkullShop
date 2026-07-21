@@ -1,24 +1,24 @@
 # ============================================================================
-# HeadShop - Simplified Chinese Messages
+# SkullShop - Simplified Chinese Messages
 # ============================================================================
 
-prefix: "&8[&6HeadShop&8] "
+prefix: "&8[&6SkullShop&8] "
 
 general:
   no_permission: "&c你没有使用此命令的权限。"
   player_only: "&c此命令仅玩家可用。"
   reload: "&a配置已重载。"
-  unknown_subcommand: "&e未知子命令: {cmd}。使用 /hs help 查看帮助。"
+  unknown_subcommand: "&e未知子命令: {cmd}。使用 /ss help 查看帮助。"
   config_loaded: "配置已加载。"
-  help_header: "&6===== HeadShop v{version} ====="
-  help_buy: "&e/hs buy [玩家名] &7- 打开GUI商店购买头颅"
-  help_buy_via: "&e/hs buy [玩家名] via <vault|player_points|item> [1|8|64] &7- 直接购买"
-  help_price: "&e/hs price [vault|player_points|item] &7- 查看价格"
-  help_price_set: "&e/hs price <vault|player_points|item> <数量> &7- 设置价格 (管理员)"
-  help_currency: "&e/hs currency <vault|player_points|item> <enable|disable> &7- 开关货币 (管理员)"
-  help_allowother: "&e/hs allowother <on|off> &7- 允许/禁止购买其他玩家头颅 (管理员)"
-  help_setitem: "&e/hs setitem &7- 将手持物品设为货币参考物品 (管理员)"
-  help_reload: "&e/hs reload &7- 重载配置 (管理员)"
+  help_header: "&6===== SkullShop v{version} ====="
+  help_buy: "&e/ss buy [玩家名] &7- 打开GUI商店购买头颅"
+  help_buy_via: "&e/ss buy [玩家名] via <vault|player_points|item> [1|8|64] &7- 直接购买"
+  help_price: "&e/ss price [vault|player_points|item] &7- 查看价格"
+  help_price_set: "&e/ss price <vault|player_points|item> <数量> &7- 设置价格 (管理员)"
+  help_currency: "&e/ss currency <vault|player_points|item> <enable|disable> &7- 开关货币 (管理员)"
+  help_allowother: "&e/ss allowother <on|off> &7- 允许/禁止购买其他玩家头颅 (管理员)"
+  help_setitem: "&e/ss setitem &7- 将手持物品设为货币参考物品 (管理员)"
+  help_reload: "&e/ss reload &7- 重载配置 (管理员)"
   help_author: "&7作者: OhtoAi"
 
 gui:
@@ -37,9 +37,9 @@ purchase:
   other_head: "&a你使用 {economy} 花费 &6{price} &a购买了 &6{player} &a的头颅。"
   insufficient: "&c余额不足！需要 &6{price}&c，当前余额 &e{balance}。"
   choose_economy: "&e请选择支付方式："
-  economy_option: "&e  /hs buy [玩家] {key} &7- {name} ({price})"
-  command_hint_self: "&7例如: /hs buy vault"
-  command_hint_player: "&7例如: /hs buy {player} vault"
+  economy_option: "&e  /ss buy [玩家] {key} &7- {name} ({price})"
+  command_hint_self: "&7例如: /ss buy vault"
+  command_hint_player: "&7例如: /ss buy {player} vault"
   other_players_disabled: "&c购买其他玩家头颅的功能已被禁用。"
   player_not_found: "&c未找到玩家 &6{player}&c。"
   inventory_full: "&e背包已满，头颅已掉落在地上。"
@@ -54,7 +54,7 @@ price:
 currency:
   enabled: "&a已启用货币: {name}"
   disabled: "&e已禁用货币: {name}"
-  usage: "&e用法: /hs currency <vault|player_points|item> <enable|disable>"
+  usage: "&e用法: /ss currency <vault|player_points|item> <enable|disable>"
   cannot_enable: "&c无法启用 {name}：对应插件未安装或物品货币未设置。"
 
 setitem:
@@ -62,7 +62,7 @@ setitem:
   success: "&a已将手持物品 &f{item} &a设为货币参考物品。所有NBT标签已记录（精确匹配）。"
 
 allowother:
-  usage: "&e用法: /hs allowother <on|off>"
+  usage: "&e用法: /ss allowother <on|off>"
   on: "&a允许"
   off: "&c禁止"
   current: "&7当前状态: {status}"
@@ -70,5 +70,5 @@ allowother:
 
 plugin:
   config_loaded: "&a配置已加载。"
-  enabled: "&aHeadShop v{version} 已启用。"
-  disabled: "&aHeadShop 已禁用。"
+  enabled: "&aSkullShop v{version} 已启用。"
+  disabled: "&aSkullShop 已禁用。"
