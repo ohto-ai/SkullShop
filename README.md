@@ -166,6 +166,8 @@ economy:
 
 ## GUI Preview / GUI 预览
 
+![Payment method selection GUI](assets/screenshots/skullshop-payment.webp)
+
 ```
 ┌──────────────────────────────┐
 │    Select Payment Method      │
